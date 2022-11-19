@@ -6,6 +6,9 @@ export const FavoritesContainer = styled.div`
   padding: 1rem;
   gap: 2rem;
 
+  h1 {
+    text-align: center;
+  }
   p {
     margin: 0 auto;
     width: fit-content;
