@@ -40,7 +40,7 @@ const Favorites: React.FC = () => {
           ))}
         </FavoriteWrapper>
       ) : (
-        <h1>Nenhum perfil favoritado</h1>
+        <p>Nenhum perfil favoritado</p>
       )}
     </FavoritesContainer>
   )

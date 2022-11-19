@@ -6,9 +6,17 @@ export const FavoritesContainer = styled.div`
   padding: 1rem;
   gap: 2rem;
 
-  h1 {
-    text-align: center;
+  p {
+    margin: 0 auto;
+    width: fit-content;
     color: ${({ theme }) => theme.blue};
+    font-size: 2rem;
+    font-weight: 700;
+    background-color: ${({ theme }) => theme['base-profile']};
+    padding: 1rem;
+    border: 0.25rem;
+    border-radius: 1rem;
+    box-shadow: 0px 1px 10px 1px rgba(0, 0, 0, 0.5);
   }
 `
 export const FavoriteWrapper = styled.div`
