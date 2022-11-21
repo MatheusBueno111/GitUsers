@@ -11,7 +11,9 @@ import { SearchInput } from './Components/SearchInput'
 import { HomeContainer, ProfileWrapper } from './styles'
 
 export const Home: React.FC = () => {
-  const { addFavoriteProfile } = useContext(FavoritesProfilesContext)
+  const { addFavoriteProfile, favoritesProfiles } = useContext(
+    FavoritesProfilesContext,
+  )
   const [profiles, setProfiles] = useState<ProfileProps[]>([])
 
   async function getProfiles(query: string = '') {
@@ -53,6 +55,9 @@ export const Home: React.FC = () => {
             key={profile.id}
             profile={profile}
             onNewFavoriteProfile={() => NewFavoriteProfile(profile.id)}
+            isCardSelected={
+              !!favoritesProfiles.find((element) => element.id === profile.id)
+            }
           />
         ))}
       </ProfileWrapper>

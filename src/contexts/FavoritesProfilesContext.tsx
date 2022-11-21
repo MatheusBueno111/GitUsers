@@ -47,14 +47,11 @@ export const FavoritesProfilesProvider: React.FC<
   function removeFavoriteProfile(id: number) {
     const updatedFavoritesProfiles = [...favoritesProfiles]
 
-    const favoriteProfileIndex = updatedFavoritesProfiles.findIndex(
-      (profile) => profile.id === id,
+    const filteredFavoriteProfiles = updatedFavoritesProfiles.filter(
+      (element) => element.id !== id,
     )
 
-    if (favoriteProfileIndex >= 0) {
-      updatedFavoritesProfiles.splice(favoriteProfileIndex, 1)
-      setFavoritesProfiles(updatedFavoritesProfiles)
-    }
+    setFavoritesProfiles(filteredFavoriteProfiles)
   }
 
   return (

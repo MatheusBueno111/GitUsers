@@ -7,11 +7,13 @@ import { ProfileProps } from '../../../../types'
 interface ProfileCardProps {
   profile: ProfileProps
   onNewFavoriteProfile: (id: number) => void
+  isCardSelected: boolean
 }
 
 export const ProfileCard: React.FC<ProfileCardProps> = ({
   profile,
   onNewFavoriteProfile,
+  isCardSelected,
 }) => {
   function handleNewFavoriteProfile() {
     onNewFavoriteProfile(profile.id)
@@ -24,7 +26,7 @@ export const ProfileCard: React.FC<ProfileCardProps> = ({
         <img src={profile.avatar_url} alt="" />
         <a href={profile.html_url}>Ir para o GitHub</a>
         <FavoriteContainer onClick={() => handleNewFavoriteProfile()}>
-          <Star size={16} weight="bold" />
+          <Star size={16} weight={isCardSelected ? 'fill' : 'bold'} />
           <h5>Favoritar</h5>
         </FavoriteContainer>
       </CardWrapper>
